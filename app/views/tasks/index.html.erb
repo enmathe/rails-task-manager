@@ -3,9 +3,15 @@
 <%@tasks.each do |task| %>
   <div>
   <% if task.completed? %>
-    <i class="far fa-check-circle"> <%= link_to task.title, task_path(task)  %> </i>
+    <i class="far fa-check-circle"> <%= link_to task.title, show_task_path(task)  %> </i>
+    <%= link_to "Delete", tasks_path(task),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
   <% else %>
-    <i class="far fa-circle"> <%= link_to task.title, task_path(task) %> </i>
+    <i class="far fa-circle"> <%= link_to task.title, show_task_path(task) %> </i>
+    <%= link_to "Delete", tasks_path(task),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
   </div>
   <% end %>
 <% end  %>

@@ -1,5 +1,5 @@
 
-<h1>Add a new task</h1>
+<h1>Edit your task</h1>
 
 <%= form_for(@task) do |f| %>
   <div class="form-group col-md-4">
@@ -12,7 +12,7 @@
     <%= f.text_field :details, class: 'form-control' %>
   </div>
 
-   <div class="field">
+  <div class="field">
     <%=  f.label :completed %>
     <%=  f.check_box :completed %>
   </div>
